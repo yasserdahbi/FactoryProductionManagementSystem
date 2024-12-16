@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vtecfactorymanagemen-dev-28a64-authRole",
+      "UnauthRoleArn": "arn:aws:iam::339713143540:role/amplify-vtecfactorymanagemen-dev-28a64-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::339713143540:role/amplify-vtecfactorymanagemen-dev-28a64-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-vtecfactorymanagemen-dev-28a64-deployment",
+      "UnauthRoleName": "amplify-vtecfactorymanagemen-dev-28a64-unauthRole",
+      "StackName": "amplify-vtecfactorymanagemen-dev-28a64",
+      "StackId": "arn:aws:cloudformation:eu-west-3:339713143540:stack/amplify-vtecfactorymanagemen-dev-28a64/e2858260-50c3-11ef-b0c6-0a95e56180b5",
+      "AmplifyAppId": "d7j7md0oyb93l"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="homepage-container">
+  <main class="container mt-5">
+    <h1 class="text-center mb-5">Welcome back! Here's what's happening with your projects today.</h1>
+    <div class="row ">
+      <div class="col-md-4 text-center mt-5 ">
+        <a routerLink="/products">
+          <fa-icon [icon]="['fas', 'box-open']" class="feature-icon"></fa-icon>
+        </a>
+        <p class="feature-text">Manage recent products</p>
+      </div>
+      <div class="col-md-4 text-center mt-5">
+        <a routerLink="batchesinprogress">
+          <fa-icon [icon]="['fas', 'tasks']" class="feature-icon"></fa-icon>
+        </a>
+        <p class="feature-text">Follow batches in progress</p>
+      </div>
+      <div class="col-md-4 text-center mt-5">
+        <a routerLink="/newmessages">
+          <fa-icon [icon]="['fas', 'envelope']" class="feature-icon"></fa-icon>
+        </a>
+        <p class="feature-text">Check your new messages</p>
+      </div>
+    </div>
+  </main>
+</div>

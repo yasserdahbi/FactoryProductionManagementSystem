@@ -1,0 +1,22 @@
+h1{
+  color: #5862ad;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+
+.feature-icon {
+  font-size: 120px; 
+  color: #071a0e;   
+  margin-bottom: 10px;
+}
+
+.feature-text {
+  color: #5862ad;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.homepage-container main {
+  margin-top: 50px;
+}

@@ -1,0 +1,32 @@
+.product-details-container {
+  margin-top: 50px;
+}
+
+.header img {
+  margin-left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.header h1 {
+  margin-left: 230px;
+  color: #5862ad;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.batch-item button {
+  width: 150px;
+  height: 100px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.batch-icon p {
+  font-size: 20px;
+}
+
+.batch-details {
+  font-size: 18px;
+}
+

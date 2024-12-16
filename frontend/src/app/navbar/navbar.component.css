@@ -1,0 +1,20 @@
+/* General styles */
+.navbar {
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  width: 400px;
+  height: 120px;
+}
+
+.nav-link {
+  margin: 0 15px; /* Moins d'espace car Bootstrap ajoute déjà de l'espace entre les éléments */
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+  font-size: 2rem; /* Correspond à environ 24px */
+  font-family: 'Georgia', serif;
+}
+

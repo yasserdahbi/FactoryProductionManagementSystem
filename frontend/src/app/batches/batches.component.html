@@ -1,0 +1,28 @@
+<div class="container mt-1 product-details-container">
+  <div class="header d-flex align-items-center">
+    <h1 class="text-center my-5">Manage batches of {{ product?.name }} here!</h1>
+    <img [src]="product?.imageUrl" alt="{{ product?.name }}" class="product-image ml-5" />
+  </div>
+
+  <div class="batches-list">
+    <div *ngFor="let batch of productBatches" class="batch-item d-flex align-items-center bg-light mb-3 p-3 rounded shadow-sm w-100">
+      <div class="batch-icon d-flex align-items-center mr-3">
+        <img src="assets/batches-icon.png" alt="Batch Icon" class="mr-2" style="width: 50px;">
+        <p class="mx-3">Batch {{ batch.number }}</p>
+      </div>
+      <div class="batch-details flex-grow-1">
+        <p><strong>Date of creation:</strong> {{ batch.createdAt }}</p>
+        <p><strong>Progress:</strong> {{ batch.currentStepNumber }}</p>
+        <p><strong>Messages:</strong> No new messages</p>
+      </div>
+      <button class="btn btn-success ml-auto" [routerLink]="['/product',product?.id,batch.number]">Follow production steps</button>
+    </div>
+  </div>
+
+  <div class="add-batch text-center mt-4">
+    <button (click)="addBatch()" class="btn btn-outline-primary d-flex align-items-center justify-content-center mt-4 mx-auto">
+      <img src="assets/add-icon.png" alt="Add Icon" class="mr-2" style="width: 40px; height: 40px;">
+      Add new batch
+    </button>
+  </div>
+</div>

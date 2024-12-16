@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div class="header d-flex align-items-center justify-content-center mb-5">
+    <h1 class="text-center">{{ product?.name }} batch {{ batch?.number }}</h1>
+    <img [src]="product?.imageUrl" alt="{{ product?.name }}" class="product-image ml-3" style="width: 100px; height: 100px;">
+  </div>
+
+  <div *ngFor="let step of steps" class="step-container mb-4 p-3 rounded border" 
+       [ngClass]="{'stepinprogress text-white': step.state !== 'Done', 'bg-success text-white': step.state === 'Done'}">
+    <div class="step-body d-flex">
+      <div class="step-header text-center mr-3">
+        Step number <br>{{ step.number }}
+      </div>
+      <p class="step-description mb-3"><strong>Description:</strong><br> {{ step.description }}</p>
+      <p><strong>Start Date:</strong><br>{{ step.createdAt | date }}</p>
+      <p><strong>Estimated End Date:</strong><br>
+        <input *ngIf="step.state === 'In progress'" type="date" [(ngModel)]="step.expectedEndDate" class="form-control">
+        <span *ngIf="step.state === 'Done'">{{ step.expectedEndDate | date }}</span>
+      </p>
+      <p><strong>Actual End Date:</strong><br>{{ step.actualEndDate ? (step.actualEndDate | date) : 'Not completed yet' }}</p>
+      <p><strong>State:</strong><br>{{ step.state }}</p>
+      <button *ngIf="step.state === 'In progress'" class="btn btn-success mt-3" (click)="markStepAsCompleted(step)">Mark Step as Completed</button>
+    </div>
+  </div>
+
+  <button *ngIf="steps.length < 26" class="btn btn-primary mt-4 mx-auto d-block" (click)="addNextStep()">Move to Next Step</button>
+</div>

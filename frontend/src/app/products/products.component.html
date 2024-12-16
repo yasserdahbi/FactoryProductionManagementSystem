@@ -1,0 +1,45 @@
+<div class="container mt-5 product-manager-container">
+  <main>
+    <h1 class="text-center my-5">Manage and add your products here!</h1>
+    
+    <div class="product-list">
+      <div *ngFor="let product of products" class="product-item d-flex align-items-center bg-light mb-3 p-3 rounded shadow-sm w-100">
+        <img [src]=" product.imageUrl " alt="{{ product.name }}" class="img-thumbnail mr-5x " style="width: 80px; height: 80px;">
+        <div class="product-details flex-grow-1">
+          <p><strong>Name :</strong> {{ product.name }}</p>
+          <p><strong>ID :</strong> {{ product.id }}</p>
+          <p><strong>Date of creation :</strong> {{ product.createdAt }}</p>
+          <p><strong>Actual number of batches :</strong> {{ product.batchesNumber }}</p>
+          <p><strong>Current release :</strong> <a [href]="'https://'+product.currentReleaseLink">{{ product.currentReleaseLink }}</a></p>
+        </div>
+        <button class="btn btn-success" [routerLink]="['/product', product.id]">Add batches</button>
+      </div>
+    </div>
+
+    <button class="btn btn-outline-primary d-flex align-items-center justify-content-center mt-4 mx-auto" (click)="showForm = !showForm">
+      <img src="assets/add-icon.png" alt="Add new product" class="mr-2" style="width: 40px; height: 40px;">
+      Add new product
+    </button>
+
+    <!-- Form for adding a new product -->
+    <div *ngIf="showForm" class="product-form bg-primary text-white p-4 rounded shadow-sm mt-4 w-75 mx-auto">
+      <label>
+        Name: 
+        <input type="text" [(ngModel)]="newProduct.name" class="form-control" />
+      </label>
+      <label>
+        ID: 
+        <input type="text" [(ngModel)]="newProduct.id" class="form-control" />
+      </label>
+      <label>
+        Link release: 
+        <input type="text" [(ngModel)]="newProduct.currentReleaseLink" class="form-control" />
+      </label>
+      <label>
+        Upload image (optional):
+        <input type="file" (change)="onFileSelected($event)" class="form-control-file" />
+      </label>
+      <button (click)="addProduct()" class="btn btn-light text-primary mt-3">Submit</button>
+    </div>
+  </main>
+</div>
